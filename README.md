@@ -56,11 +56,9 @@ e621 @ git+https://github.com/austinjb995/e621-py.git@main
 
 ---
 
-## Requirements
+## 🧱 Requirements
 
-- Python 3.11+
-- Git
-- pip / virtualenv
+This app requires Python 3.11+ and a virtual environment. Install dependencies from `requirements.txt`.
 
 ## Python Dependencies
 
@@ -70,5 +68,47 @@ Make sure you are using a virtual environment:
 python3 -m venv webdev
 source webdev/bin/activate
 pip install -r requirements.txt
+```
+## EmulatorJS Set Up
 
+Simply clone the EmulatorJS repo in the root directory of your project. I did this for simplicity and ease of use.
 
+```bash
+git clone https://github.com/EmulatorJS/EmulatorJS.git
+```
+
+## .env Configuration
+
+Create a .env file with your e621.net API key and your username
+
+```.env file contents
+E621_USER_AGENT="MyApp/1.0 (by username on e621)"
+E621_USERNAME="your_username"
+E621_API_KEY="your_api_key"
+```
+
+## Project Structure
+
+From your project root directory this is the general layout. 
+
+```text
+.
+├── app/
+│   ├── app.py
+│   ├── ...
+├── static/
+│   └── images/
+├── templates/
+│   └── ...
+├── EmulatorJS/
+│   └── ...
+├── .env
+├── .gitignore
+├── requirements.txt
+└── README.md
+```
+___
+
+## Disclaimer
+
+This is an unofficial project. Neither this app nor its author is affiliated with e621.net or EmulatorJS. All content fetched or rendered is subject to their respective licenses and terms of use.
