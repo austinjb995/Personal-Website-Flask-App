@@ -12,7 +12,10 @@ app = Flask(
     __name__,
     template_folder='../templates',
     static_folder='../static',
+    static_url_path='/static'
 )
+
+emulatorjs_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'EmulatorJS'))
 
 @app.route("/")
 def home():
@@ -153,25 +156,24 @@ def contact():
 
     return render_template('contact.html')
 
-
 # Serve EmulatorJS index.html
 @app.route('/emulator')
-def emulator_index():
-    return send_from_directory('EmulatorJS', 'index.html')
+def emulator_index():  
+    print("Serving EmulatorJS from:", emulatorjs_path)
+    return send_from_directory(emulatorjs_path, 'index.html')
 
 # Serve EmulatorJS static files under /emulatorjs/*
 @app.route('/emulatorjs/<path:filename>')
 def serve_emulatorjs_file(filename):
-    return send_from_directory('EmulatorJS', filename)
+    return send_from_directory(emulatorjs_path, filename)
 
 @app.route('/emulatorjs/data/<path:filename>')
 def serve_emulatorjs_data(filename):
-    return send_from_directory('EmulatorJS/data', filename)
+    return send_from_directory(os.path.join(emulatorjs_path, 'data'), filename)
 
 @app.route('/emulatorjs/docs/<path:filename>')
 def serve_emulatorjs_docs(filename):
-    return send_from_directory('EmulatorJS/docs', filename)
-
+    return send_from_directory(os.path.join(emulatorjs_path, 'docs'), filename)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
