@@ -3,6 +3,8 @@
 > ⚠️ **WARNING**  
 > This application integrates with the [e621.net](https://e621.net) API, a community-driven image board that may serve **NSFW or adult content**. Viewer discretion is advised.  
 > By using this app, you acknowledge and accept the responsibility for any content retrieved via search queries.
+> If you want to see a similar Flask App that is more "Professional" please see this repo that uses Unsplash instead ovf e621.net API. [`Unsplash Flask App`][https://github.com/austinjb995/Unsplash-Project]
+> If you accidentally see something you do not like have some [`eye-bleach`][https://eyebleach.me/]
 
 ---
 
