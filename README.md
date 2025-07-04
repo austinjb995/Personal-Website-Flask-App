@@ -20,6 +20,29 @@ This is a Flask-based personal website and web application with the following fe
 
 ---
 
+## e621-py Wrapper & Fork Justification
+
+This project uses [`e621-py`](https://github.com/eoan-ermine/e621-py), a Python wrapper for the [e621 API](https://e621.net/help/api).  
+However, the original package does not fully serialize `Post` models due to recent changes in the API schema and missing fields, causing runtime errors and broken JSON conversion.
+
+To resolve this, the following improvements were made and are included in a fork:
+
+📌 **Forked Repository:**  
+**https://github.com/austinjb995/e621-py**
+
+🔧 **Modifications Include:**
+- Added fallback handling for missing `alternates` and `sample` fields in `Post` models.
+- Custom serialization support for `set` objects to enable proper `json.dump()`.
+- Updated client instantiation to accept `(username, api_key)` auth tuple securely.
+- Tested compatibility with Pydantic v1.10.
+
+This fork is referenced in the `requirements.txt` as:
+
+```text
+e621 @ git+https://github.com/austinjb995/e621-py.git@main
+```
+---
+
 ## Features
 
 - 🔍 Search e621 content with filters and safety ratings.
