@@ -6,6 +6,8 @@
 
 ---
 
+This Project is still a WIP and may not work fully.
+
 ## Overview
 
 This is a Flask-based personal website and web application with the following features:
