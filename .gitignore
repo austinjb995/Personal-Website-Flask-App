@@ -1,3 +1,22 @@
+# Python cache
+__pycache__/
+*.py[cod]
+./app/__pycache__/
+./app/.DS_Store
+
+# Virtual environments
+webdev/
+venv/
 .env
-webdev
-EmulatorJS/
+
+# OS files
+.DS_Store
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Logs and temp files
+*.log
+*.tmp
+
