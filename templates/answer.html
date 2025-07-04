@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Optional inline fallback styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .topnav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+        form {
+            margin: 20px auto;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 8px 12px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            border-radius: 8px;
+            max-width: 350px;
+            max-height: 350px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topnav">
+        <a href="/">Back</a>
+    </div>
+
+    <h1>e621 Image Search</h1>
+
+    <!-- 🔍 Search Form -->
+    <form action="{{ url_for('search') }}" method="get">
+        <input type="text" name="tags" placeholder="Search tags" value="{{ tags or '' }}" required>
+
+    <label for="rating">Rating:</label>
+    <select name="rating" id="rating">
+        <option value="" {% if not rating %}selected{% endif %}>Any</option>
+        <option value="rating:safe" {% if rating == 'rating:safe' %}selected{% endif %}>Safe</option>
+        <option value="rating:questionable" {% if rating == 'rating:questionable' %}selected{% endif %}>Questionable</option>
+        <option value="rating:explicit" {% if rating == 'rating:explicit' %}selected{% endif %}>Explicit</option>
+    </select>
+
+    <input type="submit" value="Search">
+    </form>
+
+    {% if images %}
+        <h2>Results for: {{ tags }} {{ rating }}</h2>
+        <div class="gallery">
+            {% for image in images %}
+                <img src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
+            {% endfor %}
+        </div>
+    {% elif tags %}
+        <p>No results found for "{{ tags }}"</p>
+    {% else %}
+        <p>Use the form above to begin a search.</p>
+    {% endif %}
+
+</body>
+</html>
+

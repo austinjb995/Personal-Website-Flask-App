@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Contact Us</title>
+</head>
+<body>
+    <h1>Contact Form</h1>
+
+    <form action="{{ url_for('contact') }}" method="post">
+        <label for="name">Name:</label><br />
+        <input type="text" name="name" id="name" required /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" name="email" id="email" required /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea name="message" id="message" rows="5" required></textarea><br />
+
+        <input type="submit" value="Send" />
+    </form>
+
+    {% if success %}
+        <p style="color: green;">Thank you! Your message has been sent.</p>
+    {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
+

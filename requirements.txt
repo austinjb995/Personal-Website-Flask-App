@@ -1,0 +1,19 @@
+backports.cached-property==1.0.2
+blinker==1.9.0
+certifi==2025.6.15
+charset-normalizer==3.4.2
+click==8.2.1
+e621 @ git+https://github.com/eoan-ermine/e621-py.git@e8179a8efabeb74bb90f9bfcab41a4a0f825c024
+e621py-wrapper==0.1.10
+firebase==4.0.1
+Flask==3.1.1
+idna==3.10
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.2
+pydantic==1.10.22
+python-dotenv==1.1.1
+requests==2.32.4
+typing_extensions==4.14.0
+urllib3==2.5.0
+Werkzeug==3.1.3
