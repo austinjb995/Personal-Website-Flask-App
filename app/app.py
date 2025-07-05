@@ -32,7 +32,7 @@ auth = (USERNAME, API_KEY)
 client = E621(auth)
 
 # Firebase setup (uncomment and provide your URL)
-# firebase_app = firebase.FirebaseApplication('your_firebase_url', None)
+firebase_app = firebase.FirebaseApplication('your_firebase_url', None)
 
 SEARCH_LIMIT = 20
 BLACKLIST_TAGS = "-underage -cub -vore -fart -macro -diaper -feral -human -dbz -mpreg -sega"
@@ -50,7 +50,6 @@ def default_json_serializer(obj):
     raise TypeError(f"Object of type {obj.__class__.__name__} is not JSON serializable")
 
 @app.route('/search', methods=['GET'])
-
 def search():
     search_tags = request.args.get('tags', '').strip()
     rating = request.args.get('rating', '').strip()
@@ -138,7 +137,7 @@ def submit_message():
         'body': request.form.get('message', ''),
         'who': request.form.get('who', '')
     }
-    # firebase_app.post('/messages', message)  # Uncomment when Firebase is set up
+    firebase_app.post('/messages', message)  # Uncomment when Firebase is set up
     return redirect(url_for('index'))
 
 
