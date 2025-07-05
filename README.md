@@ -37,7 +37,7 @@ This is a Flask-based personal website and web application with the following fe
 - 🧼 Automatically cleans old image assets on new searches.
 
 ---
-## Automated Install Script
+# Automated Install Script
 
 Go to the releases page and download the install.sh script for an automated install (POSIX Compliant). Simply make it executable and running the script in your desired location.
 
@@ -45,10 +45,12 @@ Go to the releases page and download the install.sh script for an automated inst
 chmod +x ./install.sh
 ./install.sh
 ```
+This is the simplest way to make it as it runs all the commands neccessary for setup. Manual installation is below if you want to do it the manual way.
 
-## Manual Installation Below 
 
-# 🧱 Requirements
+# Manual Installation Below 
+
+## 🧱 Requirements
 
 This app requires Python 3.11+ and a virtual environment. Install dependencies from `requirements.txt`.
 
