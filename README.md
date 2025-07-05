@@ -48,7 +48,7 @@ chmod +x ./install.sh
 
 ## Manual Installation Below 
 
-## 🧱 Requirements
+# 🧱 Requirements
 
 This app requires Python 3.11+ and a virtual environment. Install dependencies from `requirements.txt`.
 
