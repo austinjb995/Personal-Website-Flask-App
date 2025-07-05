@@ -1,5 +1,6 @@
 #!/usr/bin/python
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, abort
+from werkzeug.utils import safe_join
 from e621 import E621  # New library import
 from dotenv import load_dotenv
 load_dotenv()
@@ -32,7 +33,7 @@ auth = (USERNAME, API_KEY)
 client = E621(auth)
 
 # Firebase setup (uncomment and provide your URL)
-firebase_app = firebase.FirebaseApplication('your_firebase_url', None)
+# firebase_app = firebase.FirebaseApplication('your_firebase_url', None)
 
 SEARCH_LIMIT = 20
 BLACKLIST_TAGS = "-underage -cub -vore -fart -macro -diaper -feral -human -dbz -mpreg -sega"
@@ -53,7 +54,7 @@ def default_json_serializer(obj):
 def search():
     search_tags = request.args.get('tags', '').strip()
     rating = request.args.get('rating', '').strip()
-    
+
     # Only fetch if tags are provided
     if search_tags:
         query = f"{search_tags} {rating} order:random status:active {BLACKLIST_TAGS}"
@@ -69,7 +70,7 @@ def search():
 
         # 🧹 Clean up previous images
         delete_images()
-        
+
         # Save JSON data
         with open(JSON_FILE, 'w') as f:
             posts_data = []
@@ -137,7 +138,7 @@ def submit_message():
         'body': request.form.get('message', ''),
         'who': request.form.get('who', '')
     }
-    firebase_app.post('/messages', message)  # Uncomment when Firebase is set up
+    # firebase_app.post('/messages', message)  # Uncomment when Firebase is set up
     return redirect(url_for('index'))
 
 
@@ -162,22 +163,42 @@ def contact():
 
 # Serve EmulatorJS index.html
 @app.route('/emulator')
-def emulator_index():  
+def emulator_index():
     print("Serving EmulatorJS from:", emulatorjs_path)
     return send_from_directory(emulatorjs_path, 'index.html')
 
-# Serve EmulatorJS static files under /emulatorjs/*
-@app.route('/emulatorjs/<path:filename>')
-def serve_emulatorjs_file(filename):
-    return send_from_directory(emulatorjs_path, filename)
+@app.route('/data/<path:filename>')
+def serve_emulatorjs_data_root(filename):
+    data_path = os.path.join(emulatorjs_path, 'data')
+    safe_path = safe_join(data_path, filename)
+    if not safe_path or not os.path.isfile(safe_path):
+        return abort(404, description="File not found.")
+    return send_from_directory(data_path, filename)
 
-@app.route('/emulatorjs/data/<path:filename>')
-def serve_emulatorjs_data(filename):
-    return send_from_directory(os.path.join(emulatorjs_path, 'data'), filename)
+@app.route('/docs/<path:filename>')
+def serve_emulatorjs_docs_root(filename):
+    docs_path = os.path.join(emulatorjs_path, 'docs')
+    safe_path = safe_join(docs_path, filename)
+    if not safe_path or not os.path.isfile(safe_path):
+        return abort(404, description="File not found.")
+    return send_from_directory(docs_path, filename)
 
-@app.route('/emulatorjs/docs/<path:filename>')
-def serve_emulatorjs_docs(filename):
-    return send_from_directory(os.path.join(emulatorjs_path, 'docs'), filename)
+@app.route('/scripts/<path:filename>')
+def serve_emulatorjs_scripts(filename):
+    scripts_path = os.path.join(emulatorjs_path, 'scripts')
+    safe_path = safe_join(scripts_path, filename)
+    if not safe_path or not os.path.isfile(safe_path):
+        return abort(404, description="File not found.")
+    return send_from_directory(scripts_path, filename)
+
+@app.route('/loader.js')
+def serve_loader():
+    file_path = os.path.join(emulatorjs_path, 'loader.js')
+    if not os.path.isfile(file_path):
+        return abort(404, description="File not found.")
+    return send_from_directory(emulatorjs_path, 'loader.js')
+
+
 
 if __name__ == '__main__':
     app.run()
