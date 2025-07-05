@@ -12,7 +12,7 @@
 
 ---
 
-This Project is still a WIP and may not work fully.
+This Project is still a WIP and may not work fully. Some features like the About This Site, message board, and Contact Me do not work. I have gotten this site on the e621 API and Emulator implementation to work fully.
 
 ## Overview
 
