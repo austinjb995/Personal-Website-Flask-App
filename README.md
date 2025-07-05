@@ -4,7 +4,9 @@
 > This application integrates with the [e621.net](https://e621.net) API, a community-driven image board that may serve **NSFW or adult content**. Viewer discretion is advised.  
 > By using this app, you acknowledge and accept the responsibility for any content retrieved via search queries or of your own curiosity.
 > If you want to see a similar Flask App that is more "Professional" please see this repo that uses Unsplash instead of e621.net API. [`Unsplash Flask App`](https://github.com/austinjb995/Unsplash-Project).
-> If you accidentally see something you do not like have some [`eye-bleach`](https://eyebleach.me/)
+> If you accidentally see something you do not like have some [`eye-bleach`](https://eyebleach.me/).
+> 
+> If you would like to view the API in action, I would stick with the safe rating. I did my best to filter out the worse the site has to offer, but I can not guarantee something wont slip through the cracks. I apologize in advance.
 
 ---
 
