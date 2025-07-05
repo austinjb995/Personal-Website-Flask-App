@@ -48,7 +48,7 @@ To resolve this, the following improvements were made and are included in a fork
 This fork is referenced in the `requirements.txt` as:
 
 ```text
-e621 @ git+https://github.com/austinjb995/e621-py.git@main
+e621 @ git+https://www.github.com/austinjb995/e621-py.git@master
 ```
 ---
 
@@ -79,7 +79,7 @@ pip install -r requirements.txt
 Simply clone the EmulatorJS repo in the root directory of your project. I did this for simplicity and ease of use.
 
 ```bash
-git clone https://github.com/EmulatorJS/EmulatorJS.git
+git clone https://www.github.com/EmulatorJS/EmulatorJS.git
 ```
 
 ## .env Configuration
@@ -90,6 +90,14 @@ Create a .env file with your e621.net API key and your username
 E621_USER_AGENT="MyApp/1.0 (by username on e621)"
 E621_USERNAME="your_username"
 E621_API_KEY="your_api_key"
+```
+
+## 401 Error
+
+If you get this error, that means you need to setup your API key.
+
+```error
+API Error: 401 Client Error: Unauthorized for url: https://e621.net/posts.json?tags=wolf+order%3Arandom+status%3Aactive+-underage+-cub+-vore+-fart+-macro+-diaper+-feral+-human+-dbz+-mpreg+-sega&limit=20&page=1
 ```
 
 ## Project Structure
