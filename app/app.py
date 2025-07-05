@@ -54,10 +54,15 @@ def default_json_serializer(obj):
 def search():
     search_tags = request.args.get('tags', '').strip()
     rating = request.args.get('rating', '').strip()
-
+    
     # Only fetch if tags are provided
     if search_tags:
         query = f"{search_tags} {rating} order:random status:active {BLACKLIST_TAGS}"
+        query_parts = [search_tags, "order:random", "status:active", BLACKLIST_TAGS]
+        if rating:
+            query_parts.insert(1, rating)  # Optional: insert after tags
+        query = " ".join(query_parts)
+
         try:
             results = client.posts.search(tags=query, limit=SEARCH_LIMIT)
         except Exception as e:
@@ -176,4 +181,4 @@ def serve_emulatorjs_docs(filename):
     return send_from_directory(os.path.join(emulatorjs_path, 'docs'), filename)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run()

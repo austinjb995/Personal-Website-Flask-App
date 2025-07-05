@@ -47,7 +47,18 @@
         .gallery img:hover {
             transform: scale(1.05);
         }
+              #loading {
+            display: none;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
+    <script>
+        function showLoading() {
+        document.getElementById("loading").style.display = "block";
+        }    
+    </script>
 </head>
 <body>
 
@@ -56,10 +67,11 @@
     </div>
 
     <h1>e621 Image Search</h1>
+    <p>You may see things you don't want to. Use at your own risk.</p>
 
     <!-- 🔍 Search Form -->
-    <form action="{{ url_for('search') }}" method="get">
-        <input type="text" name="tags" placeholder="Search tags" value="{{ tags or '' }}" required>
+<form id="searchForm" action="{{ url_for('search') }}" method="get" onsubmit="showLoading()">
+    <input type="text" name="tags" placeholder="Search tags" value="{{ tags or '' }}" required>
 
     <label for="rating">Rating:</label>
     <select name="rating" id="rating">
@@ -70,7 +82,20 @@
     </select>
 
     <input type="submit" value="Search">
-    </form>
+</form>
+
+<!-- 🔄 Loading Spinner -->
+<div id="loading" style="display: none; text-align: center; margin-top: 20px;">
+    <img src="{{ url_for('static', filename='catbongo.gif') }}" alt="Loading..." style="width: 150px; height: 150px;">
+    <p>Loading images, please wait...</p>
+</div>
+
+<!-- 🔧 JS Script -->
+<script>
+    function showLoading() {
+        document.getElementById('loading').style.display = 'block';
+    }
+</script>
 
     {% if images %}
         <h2>Results for: {{ tags }} {{ rating }}</h2>
