@@ -12,7 +12,8 @@
 
 ---
 
-This Project is still a WIP and may not work fully. Some features like the About This Site, message board, and Contact Me do not work. I have gotten this site working fully on the e621 API and EmulatorJS up and running.
+This Project is still a WIP and may not work fully. Some features like the About This Site, message board, and Contact Me do not work/have not been fully implemented. I have gotten this site working fully on the e621 API and EmulatorJS up and running.
+I will update this ReadMe as I go along with this project.
 
 ## Overview
 
