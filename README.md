@@ -12,8 +12,7 @@
 
 ---
 
-This Project is still a WIP and may not work fully. Some features like the About This Site, message board, and Contact Me do not work/have not been fully implemented. I have gotten this site working fully on the e621 API and EmulatorJS up and running.
-I will update this ReadMe as I go along with this project.
+This Project is in its infancy stage and may not work fully. Some features like the About This Site, message board, and Contact Me do not work/have not been fully implemented. I have gotten this site working fully on the e621 API and EmulatorJS up and running. I will update this ReadMe as I go along with this project and refine it.
 
 ## Overview
 
@@ -35,6 +34,11 @@ This is a Flask-based personal website and web application with the following fe
 - 🕹️ Play games through integrated EmulatorJS.
 - 📬 Contact form for feedback.
 - 🧼 Automatically cleans old image assets on new searches.
+
+## Possible Planned Features/Things I would like to add
+- Support for other image boards
+- Making everything more "pretty" i.e more front end work with CSS and JS
+- Open to more ideas
 
 ---
 # Automated Install Script
