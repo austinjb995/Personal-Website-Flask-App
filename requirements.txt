@@ -3,13 +3,15 @@ blinker==1.9.0
 certifi==2025.6.15
 charset-normalizer==3.4.2
 click==8.2.1
-e621 @ git+https://www.github.com/austinjb995/e621-py.git@master
+e621 @ git+https://www.github.com/austinjb995/e621-py.git@731ae4d0f7f1ceb386899ef6521e911d20ef05ac
 firebase==4.0.1
 Flask==3.1.1
+gunicorn==23.0.0
 idna==3.10
 itsdangerous==2.2.0
 Jinja2==3.1.6
 MarkupSafe==3.0.2
+packaging==25.0
 pydantic==1.10.22
 python-dotenv==1.1.1
 requests==2.32.4
