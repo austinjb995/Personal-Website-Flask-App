@@ -36,6 +36,7 @@ This is a Flask-based personal website and web application with the following fe
 - 🧼 Automatically cleans old image assets on new searches.
 
 ## Possible Planned Features/Things I would like to add
+- Something more immediate would be an 18+ Age verification prompt
 - Support for other image boards
 - Making everything more "pretty" i.e more front end work with CSS and JS
 - Add the most used tags for reference in answer.html
