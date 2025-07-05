@@ -92,7 +92,7 @@ E621_API_KEY="your_api_key"
 If you get this error, that means you need to setup your API key (you need to make an e621 account to get an API key).
 
 ```error
-API Error: 401 Client Error: Unauthorized for url: https://e621.net/posts.json?tags=wolf+order%3Arandom+status%3Aactive+-underage+-cub+-vore+-fart+-macro+-diaper+-feral+-human+-dbz+-mpreg+-sega&limit=20&page=1
+API Error: 401 Client Error: Unauthorized for url: 
 ```
 ___
 
