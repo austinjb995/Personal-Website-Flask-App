@@ -38,7 +38,8 @@ This is a Flask-based personal website and web application with the following fe
 ## Possible Planned Features/Things I would like to add
 - Support for other image boards
 - Making everything more "pretty" i.e more front end work with CSS and JS
-- Open to more ideas
+- Add the most used tags in the e621 search
+- Implement a popular button to cache and display popular images
 
 ---
 # Automated Install Script
