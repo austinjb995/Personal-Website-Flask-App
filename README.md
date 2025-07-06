@@ -33,7 +33,9 @@ This is a Flask-based personal website and web application with the following fe
 - 🧼 Automatically cleans old image assets on new searches.
 
 ## Upcoming Milestones
+
 v0.9.1-beta
+
 **Anonymous Comment System**
 - Add SQLite or PostgreSQL backend (configurable)
 - Comment schema: post_id, comment, timestamp, ip_hash
