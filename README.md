@@ -2,13 +2,9 @@
 
 > ⚠️ **WARNING**  
 > This application integrates with the [e621.net](https://e621.net) API, a community-driven image board that may serve **NSFW or adult content**. Viewer discretion is advised.
->   
-> By using this app, you acknowledge and accept the responsibility for any content retrieved via search queries or of your own curiosity.
-> If you want to see a similar Flask App that is more "Professional" please see this repo that uses Unsplash instead of e621.net API. [`Unsplash Flask App`](https://github.com/austinjb995/Unsplash-Project).
-> If you accidentally see something you do not like have some [`eye-bleach`](https://eyebleach.me/).
-> 
-> If you would like to view the API in action, I would stick with the safe rating. I did my best to filter out the worse the site has to offer, but I can not guarantee something wont slip through the cracks. I apologize in advance.
-> The purpose of this project was to have an enjoyable and fun project that I can continously want to work on and improve as I am more personally connected to it.
+>
+> This is a personal full-stack project that interacts with a public API for an adult content platform. The intent was to challenge myself on API integration,and production-ready Flask deployment. While
+> the content source is niche, the technical stack is fully transferable to mainstream use cases.
 >
 > That beind said, the website v0.9.0-beta pre-release is live at https://www.austinbell.xyz.
 
