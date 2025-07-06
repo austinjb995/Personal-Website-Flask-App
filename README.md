@@ -30,10 +30,27 @@ This is a Flask-based personal website and web application with the following fe
 
 - 🔍 Search e621 content with filters and safety ratings.
 - 🕹️ Play games through integrated EmulatorJS.
-- 📬 Contact form for feedback.
 - 🧼 Automatically cleans old image assets on new searches.
 
-## Possible Planned Features/Things I would like to add
+## Upcoming Milestones
+v0.9.1-beta
+**Anonymous Comment System**
+    - Add SQLite or PostgreSQL backend (configurable)
+    - Comment schema: post_id, comment, timestamp, ip_hash
+    - Front-end form with client-side JS validation
+    - Admin-only endpoint to view/delete comments
+
+**"Contact Me" Page**
+    - HTML form to send messages (via SMTP or Mailgun API)
+    - Backend validation and spam filtering
+    - Flash message or modal confirmation
+
+**About This Site Page**
+    - Static HTML page in templates/about.html
+    - Brief description of tech stack and privacy policies
+    - Navigation link added to main layout
+
+## Milestones I Would Add In the Future
 - Something more immediate would be an 18+ Age verification prompt
 - Support for other image boards
 - Making everything more "pretty" i.e more front end work with CSS and JS
