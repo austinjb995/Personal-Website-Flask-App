@@ -9,6 +9,8 @@
 > 
 > If you would like to view the API in action, I would stick with the safe rating. I did my best to filter out the worse the site has to offer, but I can not guarantee something wont slip through the cracks. I apologize in advance.
 > The purpose of this project was to have an enjoyable and fun project that I can continously want to work on and improve as I am more personally connected to it.
+>
+> That beind said, the website v0.9.0-beta pre-release is live at https://www.austinbell.xyz.
 
 ---
 
