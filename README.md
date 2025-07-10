@@ -6,7 +6,7 @@
 > This is a personal full-stack project that interacts with a public API for an adult content platform. The intent was to challenge myself on API integration,and production-ready Flask deployment. While
 > the content source is niche, the technical stack is fully transferable to mainstream use cases.
 >
-> That beind said, the website v0.9.0-beta pre-release is live at https://www.austinbell.xyz.
+> 
 
 ---
 
